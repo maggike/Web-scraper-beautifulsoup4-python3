@@ -15,7 +15,7 @@ for page in range(1,pages+1):
     page=requests.get(url).text
     doc=BeautifulSoup(page, "html.parser")
     div=doc.find(class_="item-cells-wrap border-cells items-grid-view four-cells expulsion-one-cell")
-    items=div.find_all(text=re.compile(gpu))
+    items=div.find_all(string=re.compile(gpu))
     for item in items:
         parent=item.parent
         
